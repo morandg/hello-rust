@@ -4,7 +4,7 @@ use clap::Parser;
 
 #[derive(Parser)]
 struct UserArgs {
-    fibonacci_number: u32,
+    fibonacci_number: u128,
 }
 
 fn main() {

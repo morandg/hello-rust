@@ -1,5 +1,5 @@
 pub struct FibonacciSolutions {
-  solutions: Vec<u32>,
+  solutions: Vec<u128>,
 }
 
 impl FibonacciSolutions {
@@ -9,7 +9,7 @@ impl FibonacciSolutions {
     }
   }
 
-  pub fn find_solution(&mut self, n: u32) -> Result<u32, String> {
+  pub fn find_solution(&mut self, n: u128) -> Result<u128, String> {
     let solutions_idx = usize::try_from(n).unwrap();
 
     if solutions_idx + 1 > self.solutions.len() {
@@ -50,6 +50,6 @@ mod tests {
   #[test]
   fn test_fibo_of_big_number_overflows() {
     let mut fibo_solutions = FibonacciSolutions::new();
-    assert!(matches!(fibo_solutions.find_solution(100), Err(_)));
+    assert!(matches!(fibo_solutions.find_solution(200), Err(_)));
   }
 }

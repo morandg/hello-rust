@@ -12,5 +12,8 @@ fn main() {
     let n = user_args.fibonacci_number;
     let mut fibonacci_solutions = fibonacci::FibonacciSolutions::new();
 
-    println!("Fibo of {} is {}", n, fibonacci_solutions.find_solution(n));
+    match fibonacci_solutions.find_solution(n) {
+        Ok(solution) => println!("Fibo of {} is {}", n, solution),
+        Err(error) => println!("Fibonacci error: {}", error),
+    }
 }

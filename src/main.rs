@@ -10,5 +10,7 @@ struct UserArgs {
 fn main() {
     let user_args = UserArgs::parse();
     let n = user_args.fibonacci_number;
-    println!("Fibonacci of {} is {}", n, fibonacci::fibonacci(n));
+    let mut fibonacci_solutions = fibonacci::FibonacciSolutions::new();
+
+    println!("Fibo of {} is {}", n, fibonacci_solutions.find_solution(n));
 }
